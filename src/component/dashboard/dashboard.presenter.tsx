@@ -104,7 +104,7 @@ const DashBoardUI = ({
             </SelectContainer>
           </RequestContainer>
           <OrderCardsContainer>
-            {filteredData !== []
+            {filteredData.length !== 0
               ? filteredData.map((el, index) => (
                   <OrderCard key={el.id}>
                     <OrderCardTopLayout>
