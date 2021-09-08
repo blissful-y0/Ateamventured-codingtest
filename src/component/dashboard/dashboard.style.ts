@@ -7,14 +7,26 @@ export const Heading = styled.div`
   color: #1565c0;
   display: flex;
   align-items: center;
-  padding-left: 2%;
+  /* padding-left: 2%; */
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.24);
   justify-content: space-between;
+`;
+
+export const MobileHeading = styled.div`
+  width: 100%;
+  height: 70px;
+  background-color: #1565c0;
+  color: #1565c0;
+  display: flex;
+  align-items: center;
+  /* padding-left: 2%; */
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.24);
 `;
 
 export const Logo = styled.img`
   width: 153px;
   height: 20px;
+  padding-left: 2%;
 `;
 
 export const CompanyIcon = styled.img`
@@ -74,9 +86,11 @@ export const OrderCardsContainer = styled.div`
   justify-content: center;
   width: 90%;
   max-width: 1382px;
-  min-width: 1178px;
   padding: 1%;
   grid-template-columns: 400px 400px 400px;
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 400px;
+  } ;
 `;
 
 export const RequestTitle = styled.text`

@@ -2,9 +2,11 @@ import React, { useCallback, useEffect, useState } from "react";
 import DashBoardUI from "./dashboard.presenter";
 import { IData, IMaterialSeleted, IState } from "./dashboard.types";
 import _ from "lodash";
+import { useMediaQuery } from "react-responsive";
 
 const DashBoard: React.FunctionComponent = () => {
   const API_URL: string = "http://localhost:3000/requests";
+  const isTableorMobile = useMediaQuery({ maxWidth: 768 });
 
   const [data, setData] = useState<IData[]>([]);
   const [filteredData, setFilteredData] = useState<IData[]>([]);
@@ -70,6 +72,7 @@ const DashBoard: React.FunctionComponent = () => {
       setState={setState}
       state={state}
       filteredData={filteredData}
+      isTableorMobile={isTableorMobile}
     />
   );
 };

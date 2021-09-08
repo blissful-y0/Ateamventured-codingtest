@@ -12,7 +12,7 @@ import {
   RequestTitle,
   RequestContainer,
   RequestText,
-  SelectBox,
+  MobileHeading,
   SelectContainer,
   SelectBoxConatiner,
   SwitchTest,
@@ -38,6 +38,7 @@ import {
   IState,
 } from "./dashboard.types";
 import { SetStateAction } from "react";
+import HeadingForMobile from "../heading/heading";
 
 export interface IProps {
   data: IData[] | [];
@@ -48,6 +49,7 @@ export interface IProps {
   state: IState;
   setState: (_: SetStateAction<IState>) => void;
   filteredData: IData[] | [];
+  isTableorMobile: boolean;
 }
 
 const DashBoardUI = ({
@@ -59,17 +61,26 @@ const DashBoardUI = ({
   state,
   setState,
   filteredData,
+  isTableorMobile,
 }: IProps) => {
   return (
     <>
-      <Heading>
-        <Logo src="/logo.png" />
-        <UserInfoContainer>
-          <CompanyIcon src="/icon.png" /> A 가공 업체
-          <Diverder />
-          로그아웃
-        </UserInfoContainer>
-      </Heading>
+      {isTableorMobile ? (
+        <MobileHeading>
+          <HeadingForMobile />
+          <Logo src="/logo.png" />
+        </MobileHeading>
+      ) : (
+        <Heading>
+          <Logo src="/logo.png" />
+          <UserInfoContainer>
+            <CompanyIcon src="/icon.png" /> A 가공 업체
+            <Diverder />
+            로그아웃
+          </UserInfoContainer>
+        </Heading>
+      )}
+
       <DashBoardWrapper>
         <DashBoard>
           <RequestContainer>
