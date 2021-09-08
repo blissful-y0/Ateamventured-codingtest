@@ -1,16 +1,7 @@
 import React, { SetStateAction, useState } from "react";
 import Switch from "@material-ui/core/Switch";
 
-interface IState {
-  state: boolean;
-  setState: (_: SetStateAction<boolean>) => void;
-}
-
-function Swtich() {
-  const [state, setState] = useState({
-    checked: false,
-  });
-
+function Swtich({ state, setState }) {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setState({ ...state, [event.target.name]: event.target.checked });
   };

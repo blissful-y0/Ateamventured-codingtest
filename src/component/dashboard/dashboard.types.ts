@@ -1,6 +1,6 @@
 import React, { SetStateAction } from "react";
 
-export type IData = {
+export interface IData {
   amount: number;
   client: string;
   count: number;
@@ -10,7 +10,7 @@ export type IData = {
   method: string[];
   status: string;
   title: string;
-};
+}
 
 export type IMethodSelected = {
   label: string;
@@ -20,4 +20,8 @@ export type IMethodSelected = {
 export type IMaterialSeleted = {
   label: string;
   value: string;
+};
+
+export type IState = {
+  checked: boolean;
 };
